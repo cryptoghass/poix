@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/poix_bg.qm</file>
+        <file alias="de">locale/poix_de.qm</file>
+        <file alias="en">locale/poix_en.qm</file>
+        <file alias="es">locale/poix_es.qm</file>
+        <file alias="fi">locale/poix_fi.qm</file>
+        <file alias="fr">locale/poix_fr.qm</file>
+        <file alias="it">locale/poix_it.qm</file>
+        <file alias="ja">locale/poix_ja.qm</file>
+        <file alias="pl">locale/poix_pl.qm</file>
+        <file alias="pt">locale/poix_pt.qm</file>
+        <file alias="ru">locale/poix_ru.qm</file>
+        <file alias="sk">locale/poix_sk.qm</file>
+        <file alias="sv">locale/poix_sv.qm</file>
+        <file alias="vi">locale/poix_vi.qm</file>
+        <file alias="zh_CN">locale/poix_zh_CN.qm</file>
+        <file alias="zh_TW">locale/poix_zh_TW.qm</file>
+    </qresource>
+</RCC>

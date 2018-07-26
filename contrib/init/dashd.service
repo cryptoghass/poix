@@ -1,0 +1,22 @@
+[Unit]
+Description=Poix's distributed currency daemon
+After=network.target
+
+[Service]
+User=poixcore
+Group=poixcore
+
+Type=forking
+PIDFile=/var/lib/poixd/poixd.pid
+ExecStart=/usr/bin/poixd -daemon -pid=/var/lib/poixd/poixd.pid \
+-conf=/etc/poixcore/poix.conf -datadir=/var/lib/poixd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

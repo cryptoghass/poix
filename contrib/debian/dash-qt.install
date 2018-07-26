@@ -1,0 +1,6 @@
+usr/local/bin/poix-qt usr/bin
+share/pixmaps/poix32.xpm usr/share/pixmaps
+share/pixmaps/poix16.xpm usr/share/pixmaps
+share/pixmaps/poix128.png usr/share/pixmaps
+debian/poix-qt.desktop usr/share/applications
+debian/poix-qt.protocol usr/share/kde4/services/
