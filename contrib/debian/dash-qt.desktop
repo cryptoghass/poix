@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Poix
+Comment=Poix P2P Cryptocurrency
+Comment[fr]=Poix, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Poix, eşten eşe kriptografik sanal para birimi
+Exec=poix-qt %u
+Terminal=false
+Type=Application
+Icon=poix128
+MimeType=x-scheme-handler/poix;
+Categories=Office;Finance;

@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  poixd The Poix Core server.
+#
+#
+# chkconfig: 345 80 20
+# description: poixd
+# processname: poixd
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/poixd, see below
+if [ -f /etc/sysconfig/poixd ]; then
+        . /etc/sysconfig/poixd
+fi
+
+RETVAL=0
+
+prog=poixd
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/poixd
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/poixd}
+
+# poixd defaults to /usr/bin/poixd, override with BITCOIND_BIN
+poixd=${BITCOIND_BIN-/usr/bin/poixd}
+
+# poixd opts default to -disablewallet, override with BITCOIND_OPTS
+poixd_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $poixd $poixd_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac
